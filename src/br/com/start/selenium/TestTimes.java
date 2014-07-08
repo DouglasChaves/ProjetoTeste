@@ -18,6 +18,10 @@ public class TestTimes {
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
 		driver.get("https://start.oiinternet.com.br/login.php?l=auth");
+		//Login Site
+		driver.findElement(By.id("oi_id")).sendKeys("oi307525");
+		driver.findElement(By.id("passwd")).sendKeys("Oi#2013");
+		driver.findElement(By.id("btn-do-login")).click();		
 	}
 
 	@After
@@ -26,12 +30,7 @@ public class TestTimes {
 	}
 
 	@Test
-	public void testTelaTimes() {
-		//Login Site
-		driver.findElement(By.id("oi_id")).sendKeys("oi307525");
-		driver.findElement(By.id("passwd")).sendKeys("Oi#2013");
-		driver.findElement(By.id("btn-do-login")).click();
-		
+	public void testTelaTimes01() {
 		//Seleciona menu superior Times / Todos os Profissionais
 		Actions action = new Actions(driver);
 		action.moveToElement(driver.findElement(By.linkText("Times"))).click().perform();
@@ -50,15 +49,20 @@ public class TestTimes {
 		driver.findElement(By.linkText("Tabajara Dos Reis Moura")).click();
 		
 		//Navegando na tela do Profissional
+		/*
 		driver.findElement(By.cssSelector("[class='fa fa-calendar blue']")).click();
 		driver.findElement(By.cssSelector("[class='fc-button-content']")).click();
 		driver.findElement(By.cssSelector("[class='fc-button-inner']")).click();
 		driver.findElement(By.cssSelector("[class='fc-button-inner']")).click();
-		
+		*/
+	}
+	
+	@Test
+	public void testTelaTimes02() {
 		//Seleciona menu superior Times / Calendario Anual
 		Actions actionCal = new Actions(driver);
 		actionCal.moveToElement(driver.findElement(By.linkText("Times"))).click().perform();
-		driver.findElement(By.linkText("Calend�rio Anual")).click();
+		driver.findElement(By.linkText("Calendário Anual")).click();
 		
 		//Navegando no Calend�rio Anual
 		driver.findElement(By.linkText("JAN")).click();
@@ -74,11 +78,11 @@ public class TestTimes {
 		driver.findElement(By.linkText("NOV")).click();
 		driver.findElement(By.linkText("DEZ")).click();
 		
-		//Selecionando ano 2015 para exibir Calend�rio
+		//Selecionando ano 2015 para exibir Calendário
 		Select ano = new Select(driver.findElement(By.id("slc-year")));
-		ano.selectByVisibleText("Calend�rio 2015");
+		ano.selectByVisibleText("Calendário 2015");
 		
-		//Seleciona menu superior Times / Libera��o de Acesso
+		//Seleciona menu superior Times / Liberação de Acesso
 		Actions actionAcesso = new Actions(driver);
 		actionAcesso.moveToElement(driver.findElement(By.linkText("Times"))).click().perform();
 		driver.findElement(By.linkText("Liberação de Acesso")).click();

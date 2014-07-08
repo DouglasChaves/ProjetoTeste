@@ -50,7 +50,7 @@ public class TestTarefas {
 		driver.findElement(By.cssSelector("input[id='search']")).sendKeys("Reports");
 		driver.findElement(By.cssSelector("input[class='btn btn-primary']")).click();
 		
-		//Aguarda bot�o limpar filtro
+		//Aguarda botão limpar filtro
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("filter-clear")));
 		
 		//Limpa Pesquisa
@@ -108,7 +108,7 @@ public class TestTarefas {
 		driver.findElement(By.cssSelector("input[class='btn btn-primary']")).click();
 		
 		//Visuliza pesquisa 
-		driver.findElement(By.linkText("Pesquisas Salvas")).click();
+		//driver.findElement(By.linkText("Pesquisas Salvas")).click();
 		
 		//Seleciona Item da pesquisa
 		driver.findElement(By.linkText("#903 - Notificação de e-mail")).click();

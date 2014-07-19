@@ -83,7 +83,6 @@ public class TestProjetos {
 		//Navegando menu superior Projeto
 		driver.findElement(By.linkText("Diário de Bordo")).click();//Selecao aba superior do projeto Diário de Bordo
 		//Navegando na tela Diario de Bordo
-		driver.findElement(By.cssSelector("[class='fa fa-angle-right']")).click();;
 		driver.findElement(By.linkText("Status Report")).click();
 		//Navegando menu superior Projeto
 		driver.findElement(By.linkText("Profissionais")).click();//Selecao aba superior do projeto Profissionais
